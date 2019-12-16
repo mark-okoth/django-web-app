@@ -1,0 +1,45 @@
+{% block content%}
+<header>
+
+  <style>
+    .edit{
+      text-transform: uppercase;
+    }
+  </style>
+  <div class="navbar-fixed">
+    <nav class="nav-wrapper black">
+      <div class="container">
+        <a href="{% url 'home' %}" class="brand-logo">MARK OKOTH</a>
+        <a href="" class="sidenav-trigger" data-target="mobile-menu">
+          <i class="material-icons">menu</i>
+        </a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="{% url 'home' %}" class="blue-text">HOME</a></li>
+          <li><a href="{% url 'projects' %}" class="blue-text">PROJECTS</a></li>
+          <li><a href="{% url 'blog' %}" class="blue-text">BLOGS</a></li>
+          <li><a href="{% url 'about' %}" class="blue-text">ABOUT</a></li>
+
+          {% if user.is_authenticated %}
+          <li><a href="{% url 'logout' %}" class="blue-text">LOGOUT</a></li>
+          <li><a href="{% url 'profile' %}" class="green-text edit">{{user.username}}</a></li>
+          {% else %}
+           
+          <li><a href="{% url 'login' %}" class="blue-text">LOGIN</a></li>
+          <li><a href="{% url 'register' %}" class="blue-text">REGISTER</a></li>
+          {% endif %}
+          
+        </ul>
+        <ul class="sidenav white lighten-20" id="mobile-menu">
+          <li><a href="" class="black blue-text">HOME</a></li>
+          <li><a href="" class="blue-text">PROJECTS</a></li>
+          <li><a href="" class="blue-text">BLOG</a></li>
+          <li><a href="" class="blue-text">ABOUT</a></li>
+          <li><a href="" class="blue-text">LOGIN</a></li>
+          <li><a href="" class="blue-text">REGISTER</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+{% endblock %}

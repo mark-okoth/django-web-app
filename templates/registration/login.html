@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+  .card {
+    width: 400px;
+  }
+
+  body {
+    background: rgb(165, 196, 241);
+  }
+</style>
+<br />
+<br />
+<div class="container">
+  <form class="" method="POST">
+      <div class="card">
+      <div class="card-content">
+        {% csrf_token %} {{form }}
+        <br />
+        <br />
+
+        <button class="waves-effect waves-light btn-small" type="submit">
+          login
+        </button><br> <br>
+        <p class="blue-grey-text">
+          Don't have an account register here?<br> <br>
+          
+
+          <a class="wave-effect btn-small red" href="{% url 'register' %}">Register</a>
+        </p>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+{% endblock  %}
