@@ -1,21 +1,20 @@
 {% extends "base.html" %} {% load static %} {% block content %}
 
-{% for post in posts %}
+
 
 <div class="container">
   <div class="card z-depth-0">
     <div class="card-content">
       <div class="card-title">
-        <a class="" href=" {% url 'post-details' post.id %}">{{post.title}}</a>
+        <h5 class="blue-text">{{object.title}}</h5>
       </div>
-      <p>{{post.content}}</p>
+      <p>{{object.content}}</p>
     </div>
     <div class="card-action">
-      <a href="">{{post.author}}</a>
-      <a class="right" href="">{{post.date_posted }}</a>
+      <a href="">{{object.author}}</a>
+      <a class="right" href="">{{object.date_posted }}</a>
     </div>
   </div>
 </div>
-{% endfor %} 
+ 
 {% endblock%}
-
