@@ -1,14 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% load static %}
 <div class="container">
   <form class="" method="POST">
       <div class="card">
       <div class="card-content">
         {% csrf_token %}
-        <br />
-        <br />
+         <h6>are you sure you want to delete this post {{object.title}} </h6>
+         <div class="card-action">
+          <button class="waves-effect waves-light btn-small red" type="submit">
+            delete this post</button>
 
-        <button class="waves-effect waves-light btn-small" type="submit">
-          post
-        </button>
+          <div class="right">
+            <a class="waves-effect waves-light btn-small green"href="{% url 'post-details' object.id %}">cancel</a>
+          </div>
+         </div>
       </div>
     </div>
   </form>

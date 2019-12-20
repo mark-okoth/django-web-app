@@ -14,6 +14,17 @@
       <a href="">{{object.author}}</a>
       <a class="right" href="">{{object.date_posted }}</a>
     </div>
+  {% if object.author == user  %}
+  
+    <div class="card-action">
+      <a class="waves-effect waves-light btn-small waves-orange"href="{% url 'post-update' object.id %}">update post</a>
+
+      <div class="right">
+        <a class="waves-effect waves-light btn-small  materialize-red"href="{% url 'post-delete' object.id %}">delete post</a>
+      </div>
+     </div>
+  
+  {% endif %}
   </div>
 </div>
  

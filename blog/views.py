@@ -21,7 +21,7 @@ def about(request):
     return render(request, 'about/about.html')
 
 
-class PostListView(ListView):
+class PostListView( LoginRequiredMixin, ListView):
     model = Post   
     template_name = 'blog/blog.html'    
     context_object_name = 'posts'
@@ -57,6 +57,7 @@ class PostUpdateView( LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
 class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Post
+    success_url = '/blog/'
 
     def test_func(self):
         post = self.get_object()

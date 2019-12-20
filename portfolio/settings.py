@@ -134,5 +134,4 @@ STATICFILES_DIRS = [
 LOGIN_REDIRECT_URL = 'blog'
 LOGOUT_REDIRECT_URL = 'home'
 LOGIN_URL = 'login'
-
 #media from the admin page are going to come here

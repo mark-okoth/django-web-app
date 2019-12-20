@@ -20,6 +20,7 @@
           <li><a href="{% url 'about' %}" class="blue-text">ABOUT</a></li>
 
           {% if user.is_authenticated %}
+          <li><a href="{% url 'post-create'  %}" class="blue-text">CREATE-POST</a></li>
           <li><a href="{% url 'logout' %}" class="blue-text">LOGOUT</a></li>
           <li><a href="{% url 'profile' %}" class="green-text edit">{{user.username}}</a></li>
           {% else %}
