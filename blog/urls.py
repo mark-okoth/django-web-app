@@ -2,6 +2,8 @@ from django.urls import path
 from . import views
 from . views import PostListView, PostDetailView, PostCreateView, PostUpdateView, PostDeleteView
 
+
+# all the urls concerning the blog page
 urlpatterns = [
     path('', views.home, name='home'),
     path('blog/', PostListView.as_view(), name='blog'),
